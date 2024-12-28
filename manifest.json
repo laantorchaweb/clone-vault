@@ -1,11 +1,10 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "clone-vault",
+	"name": "Clone Vault",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
-	"isDesktopOnly": false
+	"description": "Clones the current Obsidian vault by copying settings and folder structure without note contents.",
+	"author": "Sebastian Baroni",
+	"authorUrl": "https://github.com/laantorchaweb",
+	"isDesktopOnly": true
 }
