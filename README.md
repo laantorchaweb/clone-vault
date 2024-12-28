@@ -41,4 +41,4 @@ To install and build this plugin for local use:
 5. **Enable the Plugin**  
    - Open Obsidian.
    - Go to **Settings → Community plugins**.
-   - Enable **Clone Vault Plugin**.
+   - Enable **Clone Vault**.
