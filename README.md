@@ -37,7 +37,6 @@ To install and build this plugin for local use:
    - Copy the following files into that folder:
      - `manifest.json`
      - `main.js`
-     - `styles.css` (if applicable)
 
 5. **Enable the Plugin**  
    - Open Obsidian.
