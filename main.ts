@@ -219,7 +219,7 @@ async function copyFolderStructure(
 
 	const entries = fs.readdirSync(currentVaultPath, { withFileTypes: true });
 	for (const entry of entries) {
-		if (!entry.isDirectory() || entry.name === ".obsidian") continue;
+		if (!entry.isDirectory() || entry.name === this.app.vault.configDir) continue;
 
 		const folderPath = path.join(currentVaultPath, entry.name);
 		const newFolderPath = path.join(newVaultPath, entry.name);
