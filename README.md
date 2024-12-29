@@ -15,7 +15,7 @@ To install and build this plugin for local use:
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/laantorchaweb/clone-vault.git
-   cd clone-vault-plugin
+   cd clone-vault
    ```
 
 2. **Install Dependencies**  
