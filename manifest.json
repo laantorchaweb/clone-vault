@@ -1,7 +1,7 @@
 {
 	"id": "clone-vault",
 	"name": "Clone Vault",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"minAppVersion": "0.15.0",
 	"description": "Clones the current Obsidian vault by copying settings and folder structure without note contents.",
 	"author": "Sebastian Baroni",
