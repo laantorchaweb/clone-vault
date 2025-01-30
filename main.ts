@@ -5,7 +5,7 @@ import {
 	Setting,
 	Modal,
 	App,
-    FileSystemAdapter,
+	FileSystemAdapter,
 } from "obsidian";
 import * as fs from "fs";
 import * as path from "path";
@@ -28,13 +28,13 @@ class NamePromptModal extends Modal {
 		super(app);
 		this.onSubmit = onSubmit;
 		this.vaultName = "";
+		this.setTitle("New vault name");
 	}
 
 	onOpen() {
 		const { contentEl } = this;
-		contentEl.createEl("h2", { text: "New Vault Name" });
 
-		new Setting(contentEl).setName("Vault Name").addText((text) =>
+		new Setting(contentEl).setName("Vault name").addText((text) =>
 			text.onChange((value) => {
 				this.vaultName = value;
 			}),
@@ -65,7 +65,7 @@ export default class CloneVaultPlugin extends Plugin {
 
 		this.addCommand({
 			id: "create-new-vault",
-			name: "Create New Vault",
+			name: "Create new vault",
 			callback: async () => {
 				const modal = new NamePromptModal(
 					this.app,
@@ -135,7 +135,7 @@ class CloneVaultPluginSettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		new Setting(containerEl)
-			.setName("Default Vault Location")
+			.setName("Default vault location")
 			.setDesc("Base folder where new vaults will be created.")
 			.addText((text) =>
 				text
@@ -148,7 +148,7 @@ class CloneVaultPluginSettingTab extends PluginSettingTab {
 			);
 
 		new Setting(containerEl)
-			.setName("Folders to Copy with Files")
+			.setName("Folders to copy with files")
 			.setDesc("Comma or line-separated folder names to copy entirely.")
 			.addTextArea((textArea) =>
 				textArea
@@ -219,7 +219,8 @@ async function copyFolderStructure(
 
 	const entries = fs.readdirSync(currentVaultPath, { withFileTypes: true });
 	for (const entry of entries) {
-		if (!entry.isDirectory() || entry.name === this.app.vault.configDir) continue;
+		if (!entry.isDirectory() || entry.name === this.app.vault.configDir)
+			continue;
 
 		const folderPath = path.join(currentVaultPath, entry.name);
 		const newFolderPath = path.join(newVaultPath, entry.name);
